@@ -46,7 +46,7 @@ exports.getProductById = async (req, res) => {
 exports.updateProduct = async (req, res) => {
   try {
     const { id } = req.params;
-    const { productName, subcategory, category } = req.body;
+    const { productName, subcategory, category,status } = req.body;
 
     const product = await Product.findById(id);
     if (!product) {
@@ -57,6 +57,7 @@ exports.updateProduct = async (req, res) => {
     product.productName = productName || product.productName;
     product.subcategory = subcategory || product.subcategory;
     product.category = category || product.category;
+    product.status = status || product.status;
 
     await product.save();
     res.status(200).json({ message: "Product updated successfully", product });
