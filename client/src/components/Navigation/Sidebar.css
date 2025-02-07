@@ -1,0 +1,17 @@
+.arrowicon:hover{
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.arrowicon{
+    width: 24px;
+    height: 24px;
+    opacity:0.2;
+    
+}
+
+.is_active{
+    background-color: red;
+    width: 200px;
+    height: 200px;
+}
